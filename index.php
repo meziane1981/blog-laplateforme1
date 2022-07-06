@@ -1,67 +1,19 @@
 <?php
-    include 'functions/main-functions.php';
-
-    $pages = scandir('pages/');
-    if(isset($_GET['page']) && !empty($_GET['page'])){
-        if(in_array($_GET['page'].'.php',$pages)){
-            $page = $_GET['page'];
-        }else{
-            $page = "error";
-        }
-    }else{
-        $page = "home";
-    }
-
-    $pages_functions = scandir('functions/');
-    if(in_array($page.'.func.php',$pages_functions)){
-        include 'functions/'.$page.'.func.php';
-    }
-
+require_once 'bdd.php';
+include('header.php');
 ?>
 
-<html lang="fr-FR">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css" />
-        <link href='http://fonts.googleapis.com/css?family=Roboto:500,700,400' rel='stylesheet' type='text/css'>
-        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="icon" type="image/png" href="img/logo.png" />
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-        <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script>
-            (function($){
-                $(window).load(function(){
-                    $("body").mCustomScrollbar({
-                        theme:'minimal-dark', 
-                        scrollInertia:200
-                    });
-                });
-            })(jQuery);
-        </script>
-    </head>
-    <body>
-        <?php
-            include 'body/topbar.php';
-        ?>
-            <?php
-                include 'pages/'.$page.'.php';
-            ?>
-        <script src="js/jquery.js"></script>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script type="text/javascript" src="js/materialize.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-        <?php
-            $pages_js = scandir('js/');
-            if(in_array($page.'.func.js',$pages_js)){
-                ?>
-                    <script type="text/javascript" src="js/<?= $page ?>.func.js"></script>
-                <?php
-            }
-
-        ?>
-
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>BLOG</h2>
+</body>
 </html>
+

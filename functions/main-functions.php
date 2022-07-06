@@ -1,7 +1,7 @@
 <?php
     session_start();
     $dbhost = 'localhost';
-    $dbname = 'blog';
+    $dbname = 'blog-laplatforme';
     $dbuser = 'root';
     $dbpswd = '';
 
